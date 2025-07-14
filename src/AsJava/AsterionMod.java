@@ -1,5 +1,6 @@
 package AsJava;
 
+import AsJava.content.*;
 import arc.util.*;
 import mindustry.mod.*;
 
@@ -25,6 +26,7 @@ public class AsterionMod extends Mod{
     @Override
     public void loadContent(){
         Log.info("Loading Asterion content.");
+        AsItems.load();
     }
 
 }
