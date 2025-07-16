@@ -1,26 +1,35 @@
 package AsJava;
 
 import AsJava.content.*;
+import arc.Core;
+import arc.Events;
 import arc.util.*;
+import mindustry.game.EventType;
+import mindustry.gen.Icon;
 import mindustry.mod.*;
+import mindustry.ui.dialogs.BaseDialog;
+
+import static arc.Core.bundle;
+import static mindustry.Vars.loadSettings;
+import static mindustry.Vars.ui;
 
 public class AsterionMod extends Mod{
 
     public AsterionMod(){
         Log.info("Loaded Asterion (Java) constructor.");
 
-        //listen for game load event
-        /*Events.on(ClientLoadEvent.class, e -> {
-            //show dialog upon startup
-            Time.runTask(10f, () -> {
-                BaseDialog dialog = new BaseDialog("frog");
-                dialog.cont.add("behold").row();
-                //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
-                dialog.cont.image(Core.atlas.find("example-java-mod-frog")).pad(20f).row();
-                dialog.cont.button("I see", dialog::hide).size(100f, 50f);
-                dialog.show();
-            });
-        });*/
+        Events.on(EventType.ClientLoadEvent.class, e -> {
+            loadSettings();
+            if(!AsterionVars.hideWarning){
+                Time.runTask(10f, () -> {
+                    BaseDialog dialog = new BaseDialog("Asterion");
+                    dialog.cont.add(bundle.get("menu-warning")).row();
+                    dialog.cont.image(Core.atlas.find("as-java-frog")).pad(20f).row();
+                    dialog.cont.button("OK", dialog::hide).size(100f, 50f);
+                    dialog.show();
+                });
+            };
+        });
     }
 
     @Override
@@ -30,4 +39,9 @@ public class AsterionMod extends Mod{
         AsLiquids.load();
     }
 
+    private void loadSettings(){
+        ui.settings.addCategory(bundle.get("settings.asterion-settings"), Icon.book, t -> {
+            t.checkPref("hide-warning", false);
+        });
+    }
 }
