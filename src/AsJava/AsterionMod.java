@@ -23,7 +23,7 @@ public class AsterionMod extends Mod{
             if(!AsterionVars.hideWarning){
                 Time.runTask(10f, () -> {
                     BaseDialog dialog = new BaseDialog("Asterion");
-                    dialog.cont.add(bundle.get("menu-warning")).row();
+                    dialog.cont.add(Core.bundle.get("menu-warning")).row();
                     dialog.cont.image(Core.atlas.find("as-java-frog")).pad(20f).row();
                     dialog.cont.button("OK", dialog::hide).size(100f, 50f);
                     dialog.show();
