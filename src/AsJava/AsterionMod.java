@@ -27,6 +27,7 @@ public class AsterionMod extends Mod{
     public void loadContent(){
         Log.info("Loading Asterion content.");
         AsItems.load();
+        AsLiquids.load();
     }
 
 }
