@@ -1,10 +1,11 @@
 package AsJava.content;
 
+import AsJava.type.AsLiquid;
 import arc.graphics.Color;
-import mindustry.type.Liquid;
+//import mindustry.type.Liquid;
 
 public class AsLiquids {
-    public static Liquid
+    public static AsLiquid
     /* liquids */
     endomine, kryoline, ghetron,
 
@@ -12,10 +13,11 @@ public class AsLiquids {
     zion, methane, oxylene, verdyne;
     public static void load(){
         /* liquids */
-        endomine = new Liquid("endomine", Color.valueOf("f39560")){{
+        endomine = new AsLiquid("endomine", Color.valueOf("f39560")){{
             gas = false;
             gasColor = barColor = Color.valueOf("f39560");
             lightColor = Color.valueOf("cf6f46d5");
+            coolant = false;
 
             explosiveness = 0f;
             flammability = 0f;
@@ -23,12 +25,14 @@ public class AsLiquids {
             viscosity = 0.65f;
             temperature = 0.9f;
 
-            coolant = false;
+            radioactivity = 0f;
+            aggressiveness = 0.4f;
         }};
-        kryoline = new Liquid("kryoline", Color.valueOf("579adc")){{
+        kryoline = new AsLiquid("kryoline", Color.valueOf("579adc")){{
             gas = false;
             gasColor = barColor = Color.valueOf("579adc");
             lightColor = Color.valueOf("476fbfd3");
+            coolant = true;
 
             explosiveness = 0f;
             flammability = 0f;
@@ -36,12 +40,14 @@ public class AsLiquids {
             viscosity = 0.3f;
             temperature = 0.4f;
 
-            coolant = true;
+            radioactivity = 0f;
+            aggressiveness = 0.7f;
         }};
-        ghetron = new Liquid("ghetron", Color.valueOf("a47ce6")){{
+        ghetron = new AsLiquid("ghetron", Color.valueOf("a47ce6")){{
             gas = false;
-            gasColor = barColor = Color.valueOf("liquidLava");
-            //lightColor = Color.valueOf("e37644a6");
+            gasColor = barColor = Color.valueOf("a47ce6");
+            //lightColor = Color.valueOf("a47ce6");
+            coolant = false;
 
             explosiveness = 0f;
             flammability = 0.2f;
@@ -49,13 +55,15 @@ public class AsLiquids {
             viscosity = 0.65f;
             temperature = 0.6f;
 
-            coolant = false;
+            radioactivity = 0.6f;
+            aggressiveness = 0.95f;
         }};
 
         /* gases */
-        methane = new Liquid("methane", Color.valueOf("828282")){{
+        methane = new AsLiquid("methane", Color.valueOf("828282")){{
             gas = true;
-            gasColor = barColor = Color.valueOf("liquidLava");
+            gasColor = barColor = Color.valueOf("828282");
+            coolant = false;
 
             explosiveness = 1.1f;
             flammability = 0.65f;
@@ -63,11 +71,13 @@ public class AsLiquids {
             viscosity = 0.5f;
             temperature = 0.65f;
 
-            coolant = false;
+            radioactivity = 0f;
+            aggressiveness = 0f;
         }};
-        zion = new Liquid("zion", Color.valueOf("f1778c")){{
+        zion = new AsLiquid("zion", Color.valueOf("f1778c")){{
             gas = true;
-            gasColor = barColor = Color.valueOf("liquidLava");
+            gasColor = barColor = Color.valueOf("f1778c");
+            coolant = true;
 
             explosiveness = 0f;
             flammability = 0.1f;
@@ -75,11 +85,13 @@ public class AsLiquids {
             viscosity = 0.35f;
             temperature = 0.4f;
 
-            coolant = true;
+            radioactivity = 0f;
+            aggressiveness = 0.15f;
         }};
-        oxylene = new Liquid("oxylene", Color.valueOf("c365df")){{
+        oxylene = new AsLiquid("oxylene", Color.valueOf("c365df")){{
             gas = true;
             gasColor = barColor = Color.valueOf("c365df");
+            coolant = false;
 
             explosiveness = 0f;
             flammability = 0.6f;
@@ -87,11 +99,13 @@ public class AsLiquids {
             viscosity = 0.5f;
             temperature = 0.15f;
 
-            coolant = false;
+            radioactivity = 0f;
+            aggressiveness = 0.4f;
         }};
-        verdyne = new Liquid("verdyne", Color.valueOf("5283ef")){{
+        verdyne = new AsLiquid("verdyne", Color.valueOf("5283ef")){{
             gas = true;
-            gasColor = barColor = Color.valueOf("liquidLava");
+            gasColor = barColor = Color.valueOf("5283ef");
+            coolant = false;
 
             explosiveness = 1.35f;
             flammability = 0f;
@@ -99,7 +113,8 @@ public class AsLiquids {
             viscosity = 0.6f;
             temperature = 0.5f;
 
-            coolant = false;
+            radioactivity = 0.25f;
+            aggressiveness = 0.7f;
         }};
     }
 }
