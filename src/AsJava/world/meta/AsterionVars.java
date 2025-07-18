@@ -1,4 +1,4 @@
-package AsJava;
+package AsJava.world.meta;
 
 import arc.Core;
 

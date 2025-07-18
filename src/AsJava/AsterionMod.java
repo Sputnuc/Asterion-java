@@ -1,6 +1,9 @@
 package AsJava;
 
 import AsJava.content.*;
+import AsJava.ui.UIHandler;
+import AsJava.world.meta.AsterionTeams;
+import AsJava.world.meta.AsterionVars;
 import arc.Core;
 import arc.Events;
 import arc.util.*;
@@ -19,6 +22,7 @@ public class AsterionMod extends Mod{
         Log.info("Loaded Asterion (Java) constructor.");
 
         Events.on(EventType.ClientLoadEvent.class, e -> {
+            UIHandler.init();
             loadSettings();
             if(!AsterionVars.hideWarning){
                 Time.runTask(10f, () -> {
@@ -35,6 +39,7 @@ public class AsterionMod extends Mod{
     @Override
     public void loadContent(){
         Log.info("Loading Asterion content.");
+        AsterionTeams.load();
         AsItems.load();
         AsLiquids.load();
     }

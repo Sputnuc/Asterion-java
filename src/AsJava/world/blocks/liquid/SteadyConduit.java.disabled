@@ -1,0 +1,52 @@
+package AsJava.world.blocks.liquid;
+
+import arc.*;
+import arc.func.*;
+import arc.graphics.*;
+import arc.graphics.g2d.*;
+import arc.math.*;
+import arc.math.geom.*;
+import arc.struct.*;
+import arc.util.*;
+import mindustry.content.*;
+import mindustry.entities.*;
+import mindustry.entities.units.*;
+import mindustry.gen.*;
+import mindustry.graphics.*;
+import mindustry.input.*;
+import mindustry.type.*;
+import mindustry.world.*;
+import mindustry.world.blocks.distribution.*;
+import mindustry.world.blocks.liquid.Conduit;
+
+import static mindustry.Vars.*;
+import static mindustry.type.Liquid.*;
+
+public class SteadyConduit extends Conduit {
+    public Color botColor = Color.valueOf("565656");
+    public float threshold = 1;
+    public SteadyConduit(String name){
+        super(name);
+        rotate = true;
+        solid = false;
+        floating = true;
+        underBullets = true;
+        conveyorPlacement = true;
+        noUpdateDisabled = true;
+        canOverdrive = false;
+        priority = TargetPriority.transport;
+    }
+
+    public class SteadyConduitBuild extends ConduitBuild{
+
+        @Override
+        public void updateTile(){
+            if(liquids.current().temperature >= threshold){
+                damage(3);
+            }else{
+                sleep();
+            }
+        }
+    }
+    
+}
