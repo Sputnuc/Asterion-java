@@ -1,7 +1,7 @@
 package AsJava;
 
 import AsJava.content.*;
-import AsJava.ui.UIHandler;
+import AsJava.ui.AsUIHandler;
 import AsJava.world.meta.AsterionTeams;
 import AsJava.world.meta.AsterionVars;
 import arc.Core;
@@ -12,8 +12,6 @@ import mindustry.gen.Icon;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.BaseDialog;
 
-import static arc.Core.bundle;
-import static mindustry.Vars.loadSettings;
 import static mindustry.Vars.ui;
 
 public class AsterionMod extends Mod{
@@ -22,7 +20,6 @@ public class AsterionMod extends Mod{
         Log.info("Loaded Asterion (Java) constructor.");
 
         Events.on(EventType.ClientLoadEvent.class, e -> {
-            UIHandler.init();
             loadSettings();
             if(!AsterionVars.hideWarning){
                 Time.runTask(10f, () -> {
@@ -37,6 +34,12 @@ public class AsterionMod extends Mod{
     }
 
     @Override
+    public void init(){
+        super.init();
+        AsUIHandler.init();
+    }
+
+    @Override
     public void loadContent(){
         Log.info("Loading Asterion content.");
         AsterionTeams.load();
@@ -45,7 +48,7 @@ public class AsterionMod extends Mod{
     }
 
     private void loadSettings(){
-        ui.settings.addCategory(bundle.get("settings.asterion-settings"), Icon.book, t -> {
+        ui.settings.addCategory(Core.bundle.get("settings.asterion-settings"), Icon.book, t -> {
             t.checkPref("hide-warning", false);
         });
     }

@@ -11,22 +11,21 @@ import mindustry.ui.Styles;
 import static mindustry.Vars.*;
 import static mindustry.Vars.ui;
 
-public class UIHandler{
-    public static void init() {
-
-        // more team buttons in editor UI
-        MyTeamsInEditorUI();
+public class AsUIHandler{
+    public static void init(){
+        TeamsEditorUI();
     }
 
-    /* Code from FOS because I'm too dumb for this shi- :| */
-    static void MyTeamsInEditorUI(){
+    /* Code yoinked from FOS :P */
+    static void TeamsEditorUI() {
         ui.editor.shown(() -> {
             Element teambuttons = ui.editor.getChildren().get(0);
+            teambuttons = ((Group)teambuttons).getChildren().get(0);
             teambuttons = ((Group)teambuttons).getChildren().get(0);
 
             ((Table)teambuttons).row();
 
-            for (int i = 60; i <= 64; i++){
+            for (int i = 60; i <= 64; i++) {
                 Team team = Team.get(i);
 
                 ImageButton button = new ImageButton(Tex.whiteui, Styles.clearNoneTogglei);
