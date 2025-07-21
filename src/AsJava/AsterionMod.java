@@ -1,6 +1,7 @@
 package AsJava;
 
 import AsJava.content.*;
+import AsJava.content.Asterion.AsterionAllBlocks;
 import AsJava.ui.AsUIHandler;
 import AsJava.world.meta.AsterionTeams;
 import AsJava.world.meta.AsterionVars;
@@ -45,6 +46,7 @@ public class AsterionMod extends Mod{
         AsterionTeams.load();
         AsItems.load();
         AsLiquids.load();
+        AsterionAllBlocks.load();
     }
 
     private void loadSettings(){

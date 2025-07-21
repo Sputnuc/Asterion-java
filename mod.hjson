@@ -2,7 +2,7 @@
 displayName: "Asterion Java (WIP)"
 author: "[white] [purple]|Asterion [yellow]Team|[white] "
 description: "Asterion that will be reworked on Java."
-version: "Alpha 1.0"
+version: "Alpha 1.0.0"
 subtitle: "[purple]Alpha 1.0[]"
 
 name: "as-java"
