@@ -106,17 +106,17 @@ public class AsEnvBlocks{
         puzzleWall = new StaticWall("puzzle-wall"){{variants = 5;
             emitLight = true; lightColor = Color.valueOf("60a1b56d"); lightRadius = 1.5f * tilesize;
         }};
-        puzzleCrystall = new TallBlock("puzzle-crystall1"){{variants = 2;
+        puzzleCrystall = new TallBlock("puzzle-crystall"){{variants = 2;
             shadowOffset = -0.9f; shadowAlpha = 0.75f;
-            emitLight = true; lightColor = Color.valueOf("76b8cc7e"); lightRadius = 2.0f * tilesize;
+            emitLight = true; lightColor = Color.valueOf("76b8cc7e"); lightRadius = 2.1f * tilesize;
         }};
         puzzleCrystallMedium = new TallBlock("medium-puzzle-crystall"){{variants = 0;
             shadowOffset = -1.3f; shadowAlpha = 0.5f;
-            emitLight = true; lightColor = Color.valueOf("80c8d997"); lightRadius = 2.5f * tilesize;
+            emitLight = true; lightColor = Color.valueOf("80c8d997"); lightRadius = 2.7f * tilesize;
         }};
         puzzleCrystallBig = new TallBlock("big-puzzle-crystall"){{variants = 0;
             shadowOffset = -1.8f; shadowAlpha = 0.15f;
-            emitLight = true; lightColor = Color.valueOf("8fd9e39e"); lightRadius = 3.2f * tilesize;
+            emitLight = true; lightColor = Color.valueOf("8fd9e39e"); lightRadius = 3.8f * tilesize;
         }};
 
         /* Endomine Biome (lava :3) */
@@ -129,20 +129,20 @@ public class AsEnvBlocks{
             liquidDrop = endomine; liquidMultiplier = 0.4f;
             speedMultiplier = 0.75f;
             effect = Fx.fire; effectChance = 0.0005f;
-            emitLight = true; lightColor = Color.valueOf("a858408d"); lightRadius = 1.3f * tilesize;
+            emitLight = true; lightColor = Color.valueOf("a858408d"); lightRadius = 1.5f * tilesize;
         }};
         endomineLiquid = new EffectFloor("endomine-liquid"){{variants = 0;
             liquidDrop = endomine; liquidMultiplier = 1f;
             speedMultiplier = 0.5f;
-            effect = Fx.fire; effectChance = 0.0008f;
-            emitLight = true; lightColor = Color.valueOf("cf6f46d5"); lightRadius = 1.8f * tilesize;
+            effect = Fx.fire; effectChance = 0.0009f;
+            emitLight = true; lightColor = Color.valueOf("cf6f46d5"); lightRadius = 2.3f * tilesize;
             cacheLayer = CacheLayer.ShaderLayer.slag;
         }};
         endomineLiquidDeep = new EffectFloor("deep-endomine-liquid"){{variants = 0;
             liquidDrop = endomine; liquidMultiplier = 1.5f;
             speedMultiplier = 0.1f;
-            effect = Fx.fire; effectChance = 0.001f;
-            emitLight = true; lightColor = Color.valueOf("f39560"); lightRadius = 1.4f * tilesize;
+            effect = Fx.fire; effectChance = 0.002f;
+            emitLight = true; lightColor = Color.valueOf("f39560"); lightRadius = 2.5f * tilesize;
             cacheLayer = CacheLayer.ShaderLayer.slag;
         }};
         // TODO
@@ -152,6 +152,7 @@ public class AsEnvBlocks{
         // TODO
         flamingCrater = new SteamVent("flaming-crater"){{variants = 3;
             attributes.set(Attribute.steam, 1.35f);
+            emitLight = true; lightColor = Color.valueOf("a858408d"); lightRadius = 1.3f * tilesize;
         }};
         endomineRockWall = new StaticWall("endomine-rock-wall"){{variants = 4;}};
         endomineIgneousWall = new StaticWall("endomine-igneous-wall"){{variants = 4;}};
