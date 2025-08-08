@@ -111,11 +111,11 @@ public class AsEnvBlocks{
             emitLight = true; lightColor = Color.valueOf("76b8cc7e"); lightRadius = 2.1f * tilesize;
         }};
         puzzleCrystallMedium = new TallBlock("medium-puzzle-crystall"){{variants = 0;
-            shadowOffset = -1.3f; shadowAlpha = 0.5f;
+            shadowOffset = -1.3f; shadowAlpha = 0.6f;
             emitLight = true; lightColor = Color.valueOf("80c8d997"); lightRadius = 2.7f * tilesize;
         }};
         puzzleCrystallBig = new TallBlock("big-puzzle-crystall"){{variants = 0;
-            shadowOffset = -1.8f; shadowAlpha = 0.15f;
+            shadowOffset = -1.8f; shadowAlpha = 0.3f;
             emitLight = true; lightColor = Color.valueOf("8fd9e39e"); lightRadius = 3.8f * tilesize;
         }};
 
@@ -129,29 +129,31 @@ public class AsEnvBlocks{
             liquidDrop = endomine; liquidMultiplier = 0.4f;
             speedMultiplier = 0.75f;
             effect = Fx.fire; effectChance = 0.0005f;
-            emitLight = true; lightColor = Color.valueOf("a858408d"); lightRadius = 1.5f * tilesize;
+            emitLight = true; lightColor = Color.valueOf("a858408d"); lightRadius = 1.6f * tilesize;
         }};
         endomineLiquid = new EffectFloor("endomine-liquid"){{variants = 0;
             liquidDrop = endomine; liquidMultiplier = 1f;
             speedMultiplier = 0.5f;
             effect = Fx.fire; effectChance = 0.0009f;
-            emitLight = true; lightColor = Color.valueOf("cf6f46d5"); lightRadius = 2.3f * tilesize;
+            emitLight = true; lightColor = Color.valueOf("cf6f46d5"); lightRadius = 2.5f * tilesize;
             cacheLayer = CacheLayer.ShaderLayer.slag;
         }};
         endomineLiquidDeep = new EffectFloor("deep-endomine-liquid"){{variants = 0;
             liquidDrop = endomine; liquidMultiplier = 1.5f;
             speedMultiplier = 0.1f;
             effect = Fx.fire; effectChance = 0.002f;
-            emitLight = true; lightColor = Color.valueOf("f39560"); lightRadius = 2.5f * tilesize;
+            emitLight = true; lightColor = Color.valueOf("f39560"); lightRadius = 2.9f * tilesize;
             cacheLayer = CacheLayer.ShaderLayer.slag;
         }};
         // TODO
         extinguishedCrater = new SteamVent("extinguished-crater"){{variants = 3;
             attributes.set(Attribute.steam, 0.1f);
+            parent = blendGroup = endomineRock;
         }};
         // TODO
         flamingCrater = new SteamVent("flaming-crater"){{variants = 3;
             attributes.set(Attribute.steam, 1.35f);
+            parent = blendGroup = endomineRock;
             emitLight = true; lightColor = Color.valueOf("a858408d"); lightRadius = 1.3f * tilesize;
         }};
         endomineRockWall = new StaticWall("endomine-rock-wall"){{variants = 4;}};
