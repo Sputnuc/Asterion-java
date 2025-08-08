@@ -62,7 +62,6 @@ public class AsEnvBlocks{
         /* Column Biome */
         columnFloor = new Floor("column-floor"){{variants = 5;}};
         columnFloorCracked = new EffectFloor("cracked-column-floor"){{variants = 4;
-            blendGroup = endomineRock;
             effect = AsFx.craterSmoke; effectChance = 0.0004f;
         }};
         columnVent = new SteamVent("column-vent"){{variants = 3;
@@ -88,7 +87,6 @@ public class AsEnvBlocks{
         /* Ash... */
         ashPatch = new Floor("ash-patch"){{variants = 5;}};
         ashPatchCracked = new EffectFloor("cracked-ash-patch"){{variants = 4;
-            blendGroup = endomineRock;
             effect = AsFx.craterSmoke; effectChance = 0.0004f;
         }};
         igneousAsh = new EffectFloor("igneous-ash"){{variants = 5;
