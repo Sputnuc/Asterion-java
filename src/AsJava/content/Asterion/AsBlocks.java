@@ -1,6 +1,5 @@
 package AsJava.content.Asterion;
 
-import AsJava.world.blocks.AsConsGenerator;
 import mindustry.world.Block;
 
 public class AsBlocks{
@@ -22,6 +21,6 @@ public class AsBlocks{
 
     //Power
     kitenGenerator;
-    
+
 
 }
