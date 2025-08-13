@@ -2,7 +2,7 @@ package AsJava.content.Asterion;
 
 import AsJava.content.AsEnvBlocks;
 
-public class AsterionAllBlocks{
+public class AsBlockLoader {
     public static void load(){
         AsEnvBlocks.load();
     }

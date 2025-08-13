@@ -8,7 +8,7 @@ import mindustry.type.*;
 public class AsItems {
     public static Item
             // Common items
-            whitorite, pyrite, quartz, zincum, blacktite, magnetite, ghetronFlesh,
+            whitorite, pyrite, quartz, zincum, blacktite, magnetite, ghetronFlesh, calcite,
 
             /* Orion */
             irmenite, silicate,
