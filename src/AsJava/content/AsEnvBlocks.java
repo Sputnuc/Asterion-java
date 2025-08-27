@@ -44,9 +44,12 @@ public class AsEnvBlocks{
             whiteoriteOre, pyriteOre, zincumOre, cobaltOre;
     public static void load(){
         /* Quartz biome */
-        quartzSandPatch = new Floor("quartz-sand-patch"){{variants = 5;}};
+        quartzSandPatch = new Floor("quartz-sand-patch"){{variants = 5;
+            albedo = 0.1f;
+        }};
         quartzFloor =  new Floor("quartz-floor"){{variants = 5;
             itemDrop = quartz;
+            albedo = 0.1f;
         }};
         quartzVent = new SteamVent(""){{variants = 3;
             attributes.set(Attribute.steam, 0.6f);
@@ -98,6 +101,7 @@ public class AsEnvBlocks{
         /* Puzzle ~~slime~~ Biome */
         puzzleFloor = new Floor("puzzle-floor"){{variants = 5;
             emitLight = true; lightColor = Color.valueOf("648ea15c"); lightRadius = 1.3f * tilesize;
+            albedo = 0.35f;
         }};
         puzzleGrowth = new Prop("puzzle-growth"){{variants = 3;
             breakSound = destroySound = Sounds.click;
@@ -168,6 +172,7 @@ public class AsEnvBlocks{
         kryolineLiquid = new Floor("kryoline-liquid"){{variants = 0;
             liquidDrop = kryoline;
             status = StatusEffects.melting; statusDuration = 182f;
+            albedo = 0.9f;
         }};
 
         /* Ghentron' nest (// TODO) */
