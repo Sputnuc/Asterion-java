@@ -107,8 +107,8 @@ public class AsLiquids {
             gasColor = barColor = Color.valueOf("f1778c");
             coolant = true;
 
-            explosiveness = 0f;
-            flammability = 0.1f;
+            explosiveness = 0.35f;
+            flammability = 0.55f;
             heatCapacity = 0.35f;
             viscosity = 0.35f;
             temperature = 0.4f;
