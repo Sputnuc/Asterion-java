@@ -12,7 +12,7 @@ public class AsLiquids {
     /* liquids */
     endomine, oxylene, kryoline, ghetron,
 
-    /* Gases*/
+    /* Gases */
     zion, methane, verdyne;
     public static void load(){
         /* liquids */
